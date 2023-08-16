@@ -1,9 +1,9 @@
 package com.example.mariabonitaskincareroutineapi.enums;
 
-public enum SkinType {
+public enum SkinTypeClient {
     OILY,
     DRY,
     COMBINATION,
     NORMAL,
-    SENSITIVE
+    SENSITIVE,
 }

@@ -1,8 +1,5 @@
 package com.example.mariabonitaskincareroutineapi.domain.client;
-import com.example.mariabonitaskincareroutineapi.enums.Age;
-import com.example.mariabonitaskincareroutineapi.enums.HowMuch;
-import com.example.mariabonitaskincareroutineapi.enums.PigmentedSkin;
-import com.example.mariabonitaskincareroutineapi.enums.SkinType;
+import com.example.mariabonitaskincareroutineapi.enums.*;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,7 +20,7 @@ public class Client {
     private Age age;
 
     @Enumerated(EnumType.STRING)
-    private SkinType skinType;
+    private SkinTypeClient skinTypeClient;
 
     @Enumerated(EnumType.STRING)
     private HowMuch howMuch;

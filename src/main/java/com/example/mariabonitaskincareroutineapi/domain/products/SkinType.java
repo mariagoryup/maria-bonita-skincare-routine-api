@@ -1,22 +1,16 @@
 package com.example.mariabonitaskincareroutineapi.domain.products;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.Data;
 
-import java.util.List;
-
-@Table(name = "skinType")
 @Entity
-@Getter
-@NoArgsConstructor
+@Data
 public class SkinType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long idSkinType;
     String name;
 
-    @ManyToMany (mappedBy = "skinType")
-    List<Products> products;
-
+    @ManyToOne
+    private Products products;
 }

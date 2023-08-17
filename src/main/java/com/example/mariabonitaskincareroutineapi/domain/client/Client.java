@@ -28,6 +28,9 @@ public class Client {
     @Enumerated(EnumType.STRING)
     private PigmentedSkin pigmentedSkin;
 
+    @Enumerated(EnumType.STRING)
+    private SensitiveSkin sensitiveSkin;
+
 
 
 }

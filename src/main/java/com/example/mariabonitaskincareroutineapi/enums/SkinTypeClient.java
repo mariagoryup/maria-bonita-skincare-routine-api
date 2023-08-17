@@ -5,5 +5,4 @@ public enum SkinTypeClient {
     DRY,
     COMBINATION,
     NORMAL,
-    SENSITIVE,
 }

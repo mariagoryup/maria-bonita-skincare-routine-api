@@ -1,5 +1,6 @@
 package com.example.mariabonitaskincareroutineapi.domain.products;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -12,5 +13,6 @@ public class SkinType {
     String name;
 
     @ManyToOne
+    @JsonIgnore
     private Products products;
 }

@@ -1,8 +1,12 @@
 package com.example.mariabonitaskincareroutineapi.domain.client;
+import com.example.mariabonitaskincareroutineapi.domain.products.Routine;
 import com.example.mariabonitaskincareroutineapi.enums.*;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Table(name = "client" )
@@ -31,6 +35,7 @@ public class Client {
     @Enumerated(EnumType.STRING)
     private SensitiveSkin sensitiveSkin;
 
-
+    @OneToMany (cascade = CascadeType.ALL, orphanRemoval = true)
+    List<Routine> routines = new ArrayList<>();
 
 }

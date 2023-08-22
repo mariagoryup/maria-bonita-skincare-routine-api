@@ -1,18 +1,23 @@
 package com.example.mariabonitaskincareroutineapi.domain.products;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
 @Data
-public class Category {
+public class Step {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long idCategory;
-    String name;
+    long idStep;
 
     @ManyToOne
-    @JsonIgnore
+    private StepCategory name;
+
+    @ManyToOne
     private Products products;
 
-    }
+
+    @ManyToOne
+    private Routine routine;
+
+}

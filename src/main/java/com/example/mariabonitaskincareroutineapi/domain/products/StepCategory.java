@@ -1,18 +1,21 @@
 package com.example.mariabonitaskincareroutineapi.domain.products;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Data
-public class Category {
+public class StepCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long idCategory;
+    long idStepCategory;
     String name;
 
-    @ManyToOne
-    @JsonIgnore
-    private Products products;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    List<Step> steps = new ArrayList<>();
 
-    }
+
+}

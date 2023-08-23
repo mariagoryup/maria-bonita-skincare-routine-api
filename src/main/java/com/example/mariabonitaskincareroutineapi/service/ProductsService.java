@@ -1,8 +1,6 @@
 package com.example.mariabonitaskincareroutineapi.service;
 
-import com.example.mariabonitaskincareroutineapi.domain.products.Category;
-import com.example.mariabonitaskincareroutineapi.domain.products.Products;
-import com.example.mariabonitaskincareroutineapi.domain.products.SkinType;
+import com.example.mariabonitaskincareroutineapi.domain.products.*;
 import com.example.mariabonitaskincareroutineapi.repository.ProductsRepository;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
@@ -66,6 +64,19 @@ public class ProductsService {
         return productsRepository.save(products);
     }
 
+    @Transactional
+    public Products addFeature(Long idFeature, Feature feature) {
+        Products products = productsRepository.findById(idFeature).orElseThrow();
+        products.addFeature(feature);
+        return productsRepository.save(products);
+    }
+
+    @Transactional
+    public Products addStep(Long idStep, Step step) {
+        Products products = productsRepository.findById(idStep).orElseThrow();
+        products.addStep(step);
+        return productsRepository.save(products);
+    }
 
 }
 

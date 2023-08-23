@@ -1,5 +1,6 @@
 package com.example.mariabonitaskincareroutineapi.domain.products;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -11,13 +12,16 @@ public class Step {
     long idStep;
 
     @ManyToOne
+    @JsonIgnore
     private StepCategory name;
 
     @ManyToOne
+    @JsonIgnore
     private Products products;
 
 
     @ManyToOne
+    @JsonIgnore
     private Routine routine;
 
 }

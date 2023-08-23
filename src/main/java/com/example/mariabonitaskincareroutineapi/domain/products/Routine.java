@@ -1,6 +1,7 @@
 package com.example.mariabonitaskincareroutineapi.domain.products;
 
 import com.example.mariabonitaskincareroutineapi.domain.client.Client;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -16,8 +17,14 @@ public class Routine {
     String name;
 
     @OneToMany (cascade = CascadeType.ALL, orphanRemoval = true)
-    List<Step> steps = new ArrayList<>();
+    private List<Step> steps = new ArrayList<>();
+    public void addStep(Step step) {
+        steps.add(step);
+        step.setRoutine(this);
+    }
+
 
     @ManyToOne
+    @JsonIgnore
     private Client client;
 }

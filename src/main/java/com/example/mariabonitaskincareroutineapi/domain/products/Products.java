@@ -36,8 +36,14 @@ public class Products {
       feature.setProducts(this);
   }
 
- //@OneToMany (cascade = CascadeType.ALL, orphanRemoval = true)
-  //private List<Step> steps = new ArrayList<>();
+ @OneToMany (cascade = CascadeType.ALL, orphanRemoval = true)
+  private List<Step> steps = new ArrayList<>();
+  public void addStep(Step step) {
+      steps.add(step);
+      step.setProducts(this);
+  }
+
+
 
 
 
@@ -45,9 +51,3 @@ public class Products {
 
 }
 
-
-
-// public void addCategory(Category category) {
-//    categories.add(category);
-//    category.setProducts(this);
-//  }

@@ -1,8 +1,6 @@
 package com.example.mariabonitaskincareroutineapi.controller;
 
-import com.example.mariabonitaskincareroutineapi.domain.products.Category;
-import com.example.mariabonitaskincareroutineapi.domain.products.Products;
-import com.example.mariabonitaskincareroutineapi.domain.products.SkinType;
+import com.example.mariabonitaskincareroutineapi.domain.products.*;
 import com.example.mariabonitaskincareroutineapi.dtos.ProductsRecordDto;
 import com.example.mariabonitaskincareroutineapi.repository.ProductsRepository;
 import com.example.mariabonitaskincareroutineapi.service.ProductsService;
@@ -78,6 +76,16 @@ public class ProductsController {
     @PostMapping("{idProducts}/skinTypes")
     public Products addSkinType(@PathVariable("idProducts") Long idSkinType, @RequestBody SkinType skinType) {
         return productsService.addSkinType(idSkinType, skinType);
+    }
+
+    @PostMapping("{idProducts}/feature")
+    public Products addFeature(@PathVariable("idProducts") Long idFeature, @RequestBody Feature feature) {
+        return productsService.addFeature(idFeature, feature);
+    }
+
+    @PostMapping("{idProducts}/step")
+    public Products addStep(@PathVariable("idProducts") Long idStep, @RequestBody Step step) {
+        return productsService.addStep(idStep, step);
     }
 
 

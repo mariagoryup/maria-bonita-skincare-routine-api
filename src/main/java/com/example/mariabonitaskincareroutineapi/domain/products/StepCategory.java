@@ -14,8 +14,16 @@ public class StepCategory {
     long idStepCategory;
     String name;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    List<Step> steps = new ArrayList<>();
+    @OneToMany (cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Step> steps = new ArrayList<>();
+
+
+
+
+
+
+
+
 
 
 }

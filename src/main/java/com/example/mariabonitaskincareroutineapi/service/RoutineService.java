@@ -1,12 +1,35 @@
 package com.example.mariabonitaskincareroutineapi.service;
 
+import com.example.mariabonitaskincareroutineapi.domain.products.Products;
+import com.example.mariabonitaskincareroutineapi.domain.products.Routine;
+import com.example.mariabonitaskincareroutineapi.domain.products.Step;
 import com.example.mariabonitaskincareroutineapi.repository.RoutineRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class RoutineService {
 
     final RoutineRepository routineRepository;
+
+    public List<Routine> findAll() {
+        return routineRepository.findAll();
+    }
+
+    public Routine findById(Long idRoutine) {
+        return routineRepository.findById(idRoutine).orElseThrow();
+    }
+
+
+
+    @Transactional
+    public Routine addStep(Long idStep, Step step) {
+        Routine routine = routineRepository.findById(idStep).orElseThrow();
+        routine.addStep(step);
+        return routineRepository.save(routine);
+    }
 }

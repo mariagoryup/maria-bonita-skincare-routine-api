@@ -1,0 +1,10 @@
+### Get all category
+GET localhost:8080/category
+
+### get category by name
+GET localhost:8080/category?name=tonic
+
+### Get category by id
+GET localhost:8080/category/6
+
+

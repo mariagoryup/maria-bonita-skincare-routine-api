@@ -15,7 +15,10 @@ public class StepCategory {
     String name;
 
     @OneToMany (cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Step> steps = new ArrayList<>();
+    private List<Step> cleanser = new ArrayList<>();
+
+
+
 
 
 

@@ -15,32 +15,32 @@ public class Products {
     private String company;
     float price;
 
-  @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+  @ManyToMany(cascade = CascadeType.ALL) //, orphanRemoval = true
   private List<Category> categories = new ArrayList<>();
   public void addCategory(Category category) {
     categories.add(category);
-    category.setProducts(this);
+    category.getProducts().add(this);
   }
 
- @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+ @ManyToMany (cascade = CascadeType.ALL)//, orphanRemoval = true
   private List<SkinType> skinTypes = new ArrayList<>();
   public void addSkinType(SkinType skinType){
     skinTypes.add(skinType);
-    skinType.setProducts(this);
+    skinType.getProducts().add(this);
   }
 
- @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+ @ManyToMany(cascade = CascadeType.ALL) //, orphanRemoval = true
  private List<Feature> features = new ArrayList<>();
   public void addFeature(Feature feature) {
       features.add(feature);
-      feature.setProducts(this);
+      feature.getProducts().add(this);
   }
 
- @OneToMany (cascade = CascadeType.ALL, orphanRemoval = true)
+ @ManyToMany (cascade = CascadeType.ALL) //, orphanRemoval = true
   private List<Step> steps = new ArrayList<>();
   public void addStep(Step step) {
       steps.add(step);
-      step.setProducts(this);
+      step.getProducts().add(this);
   }
 
 

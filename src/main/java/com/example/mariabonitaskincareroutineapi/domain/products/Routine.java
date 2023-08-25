@@ -26,5 +26,5 @@ public class Routine {
 
     @ManyToOne
     @JsonIgnore
-    private Client client;
+    Client client;
 }

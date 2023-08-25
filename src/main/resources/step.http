@@ -1,0 +1,6 @@
+### Get all Steps
+GET localhost:8080/step
+
+### Get Steps by id
+GET localhost:8080/step/2
+

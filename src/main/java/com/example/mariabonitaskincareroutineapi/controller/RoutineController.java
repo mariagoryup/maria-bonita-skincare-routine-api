@@ -5,8 +5,12 @@ import com.example.mariabonitaskincareroutineapi.domain.products.Routine;
 import com.example.mariabonitaskincareroutineapi.domain.products.Step;
 import com.example.mariabonitaskincareroutineapi.repository.RoutineRepository;
 import com.example.mariabonitaskincareroutineapi.service.RoutineService;
+import jakarta.persistence.EntityNotFoundException;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,10 +31,24 @@ public class RoutineController {
         return routineService.findById(idRoutine);
     }
 
-
-
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Routine createRoutine(@RequestBody Routine routine) {
+        return routineService.save(routine);
+    }
+    @DeleteMapping("/{idRoutine}")
+    @Transactional
+    public ResponseEntity<Void> deleteRoutine(@PathVariable Long idRoutine) {
+        try {
+            routineService.delete(idRoutine);
+            return ResponseEntity.noContent().build();
+        } catch (EntityNotFoundException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
     @PostMapping("{idRoutine}/step")
     public Routine addStep(@PathVariable("idRoutine") Long idStep, @RequestBody Step step) {
         return routineService.addStep(idStep, step);
     }
 }
+

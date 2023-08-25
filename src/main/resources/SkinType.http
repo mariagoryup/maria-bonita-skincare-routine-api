@@ -1,0 +1,5 @@
+### Get all SkinType
+GET localhost:8080/skinType
+
+###### Get skinType by Id
+GET localhost:8080/skinType/2

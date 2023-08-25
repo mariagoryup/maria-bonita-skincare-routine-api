@@ -1,0 +1,7 @@
+### Get all feature
+GET localhost:8080/feature
+
+### Get feature by id
+GET localhost:8080/feature/2
+
+

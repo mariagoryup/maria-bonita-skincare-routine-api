@@ -1,0 +1,32 @@
+### Get all clients
+GET localhost:8080/client
+
+### Get client by id
+GET localhost:8080/client/2
+
+### Create a new client
+POST localhost:8080/client
+Content-Type: application/json
+
+{
+  "name": "Josi Ribeiro",
+  "email": "josi@josi.com",
+  "age": "AGE_OVER_50",
+  "skinTypeClient": "DRY",
+  "howMuch": "$$$",
+  "pigmentedSkin":"YES",
+  "sensitiveSkin": "NO"
+
+}
+
+### delet a client
+DELETE localhost:8080/client/4
+
+### Add a routine to a client
+POST localhost:8080/client/1/routine
+Content-Type: application/json
+
+{
+  "name": "Maria`s Routine"
+}
+

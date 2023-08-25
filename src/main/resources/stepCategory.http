@@ -1,0 +1,5 @@
+### Get all stepCategory
+GET localhost:8080/stepCategory
+
+### Get stepCategory by id
+GET localhost:8080/stepCategory/1

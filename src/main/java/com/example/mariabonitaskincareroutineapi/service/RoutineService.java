@@ -4,6 +4,7 @@ import com.example.mariabonitaskincareroutineapi.domain.products.Products;
 import com.example.mariabonitaskincareroutineapi.domain.products.Routine;
 import com.example.mariabonitaskincareroutineapi.domain.products.Step;
 import com.example.mariabonitaskincareroutineapi.repository.RoutineRepository;
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,28 @@ public class RoutineService {
     public Routine findById(Long idRoutine) {
         return routineRepository.findById(idRoutine).orElseThrow();
     }
+
+    @Transactional
+    public Routine save(Routine routine) {
+        return routineRepository.save(routine);
+    }
+
+    @Transactional
+    public Routine update(Long idRoutine, Routine updatedRoutine) {
+        Routine existingRoutine = routineRepository.findById(idRoutine)
+                .orElseThrow(() -> new EntityNotFoundException("Routine not found"));
+        existingRoutine.setName(updatedRoutine.getName());
+        existingRoutine.setSteps(updatedRoutine.getSteps());
+
+        return routineRepository.save(existingRoutine);
+    }
+
+    @Transactional
+    public void delete(Long idRoutine) {
+        routineRepository.deleteById(idRoutine);
+    }
+
+
 
 
 

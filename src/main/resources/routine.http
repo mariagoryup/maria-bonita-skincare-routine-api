@@ -1,0 +1,26 @@
+### Get all routine
+GET localhost:8080/routine
+
+### Get routine by id
+GET localhost:8080/routine/2
+
+### Create a new Routine
+POST localhost:8080/routine
+Content-Type: application/json
+
+{
+  "name": "Maria Bonita 1"
+
+}
+
+### delet a routine
+DELETE localhost:8080/routine/1
+
+
+### Add a step to a routine
+POST localhost:8080/routine/2/step
+Content-Type: application/json
+
+{
+  "name": "cleanser"
+}

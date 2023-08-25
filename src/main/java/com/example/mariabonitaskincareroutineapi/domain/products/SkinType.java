@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Data
 public class SkinType {
@@ -12,7 +15,7 @@ public class SkinType {
     Long idSkinType;
     String name;
 
-    @ManyToOne
+    @ManyToMany
     @JsonIgnore
-    private Products products;
+    private List<Products> products = new ArrayList<>();
 }

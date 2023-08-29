@@ -1,6 +1,5 @@
 package com.example.mariabonitaskincareroutineapi.service;
 
-import com.example.mariabonitaskincareroutineapi.domain.products.Step;
 import com.example.mariabonitaskincareroutineapi.domain.products.StepCategory;
 import com.example.mariabonitaskincareroutineapi.repository.StepCategoryRepository;
 import lombok.RequiredArgsConstructor;

@@ -1,11 +1,8 @@
 package com.example.mariabonitaskincareroutineapi.controller;
 
 import com.example.mariabonitaskincareroutineapi.domain.products.Category;
-import com.example.mariabonitaskincareroutineapi.domain.products.Products;
-import com.example.mariabonitaskincareroutineapi.repository.CategoryRepository;
 import com.example.mariabonitaskincareroutineapi.service.CategoryService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,16 +19,16 @@ public class CategoryController {
     public List<Category> getAllCategory() {
         return categoryService.findAll();
     }
+
     @GetMapping("/{idCategory}")
     public Category getCategoryById(@PathVariable Long idCategory) {
         return categoryService.findById(idCategory);
     }
 
     @GetMapping("name")
-    public List<Category> getAllCategory(@RequestParam Optional<String > name) {
-    return categoryService.findAll(name);
+    public List<Category> getAllCategory(@RequestParam Optional<String> name) {
+        return categoryService.findAll(name);
     }
-
 
 
 }

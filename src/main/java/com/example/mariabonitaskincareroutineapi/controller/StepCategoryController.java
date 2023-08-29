@@ -1,11 +1,8 @@
 package com.example.mariabonitaskincareroutineapi.controller;
 
-import com.example.mariabonitaskincareroutineapi.domain.products.Step;
 import com.example.mariabonitaskincareroutineapi.domain.products.StepCategory;
-import com.example.mariabonitaskincareroutineapi.repository.StepCategoryRepository;
 import com.example.mariabonitaskincareroutineapi.service.StepCategoryService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

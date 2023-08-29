@@ -4,14 +4,18 @@ GET localhost:8080/routine
 ### Get routine by id
 GET localhost:8080/routine/2
 
-### Create a new Routine
-POST localhost:8080/routine
-Content-Type: application/json
+### Get the skinCare routine
+GET localhost:8080/routines/new
 
-{
-  "name": "Maria Bonita 1"
 
-}
+//### Create a new Routine
+//POST localhost:8080/routine
+//Content-Type: application/json
+
+//{
+  //"name": "Maria Bonita 1"
+
+//}
 
 ### delet a routine
 DELETE localhost:8080/routine/1

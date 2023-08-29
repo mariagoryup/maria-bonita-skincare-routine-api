@@ -1,0 +1,34 @@
+### Get all users
+GET localhost:8080/client
+
+### Get user by id
+GET localhost:8080/client/2
+
+### Create a new user
+POST localhost:8080/api/roles/user
+Content-Type: application/json
+
+{
+  "name": "Vinnie Goryup",
+  "email": "vinnie@vinnie.com",
+  "password":"123456",
+  "username": "vinniegoryup",
+  "age": "AGE_30_TO_49",
+  "skinTypeClient": "OILY",
+  "howMuch": "$",
+  "pigmentedSkin":"NO",
+  "sensitiveSkin": "YES"
+
+}
+
+### delet a user
+DELETE localhost:8080/user/4
+
+### Add a routine to a user
+POST localhost:8080/user/1/routine
+Content-Type: application/json
+
+{
+  "name": "Maria`s Routine"
+}
+

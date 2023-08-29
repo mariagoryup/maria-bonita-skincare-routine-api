@@ -1,6 +1,5 @@
 package com.example.mariabonitaskincareroutineapi.service;
 
-import com.example.mariabonitaskincareroutineapi.domain.products.Category;
 import com.example.mariabonitaskincareroutineapi.domain.products.SkinType;
 import com.example.mariabonitaskincareroutineapi.repository.SkinTypeRepository;
 import lombok.RequiredArgsConstructor;
@@ -13,7 +12,8 @@ import java.util.List;
 public class SkinTypeService {
     private final SkinTypeRepository skinTypeRepository;
 
-    public List<SkinType> findAll() { return skinTypeRepository.findAll();
+    public List<SkinType> findAll() {
+        return skinTypeRepository.findAll();
     }
 
     public SkinType findById(Long idSkinType) {

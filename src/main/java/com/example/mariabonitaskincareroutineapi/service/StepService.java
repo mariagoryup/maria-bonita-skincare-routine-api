@@ -1,6 +1,5 @@
 package com.example.mariabonitaskincareroutineapi.service;
 
-import com.example.mariabonitaskincareroutineapi.domain.products.Category;
 import com.example.mariabonitaskincareroutineapi.domain.products.Step;
 import com.example.mariabonitaskincareroutineapi.repository.StepRepository;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +11,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class StepService {
 
-   private final StepRepository stepRepository;
+    private final StepRepository stepRepository;
 
     public List<Step> findAll() {
         return stepRepository.findAll();

@@ -1,0 +1,11 @@
+### get the token
+POST localhost:8080/api/login
+corrent-Type: application/Json
+{
+"username":"",
+"password":""
+}
+
+### get all users
+GET localhost:8080/api/users
+Authorization:

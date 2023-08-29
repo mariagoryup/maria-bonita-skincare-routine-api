@@ -1,9 +1,7 @@
 package com.example.mariabonitaskincareroutineapi.service;
 
 import com.example.mariabonitaskincareroutineapi.domain.products.Category;
-import com.example.mariabonitaskincareroutineapi.domain.products.Products;
 import com.example.mariabonitaskincareroutineapi.repository.CategoryRepository;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -24,10 +22,10 @@ public class CategoryService {
     }
 
     public List<Category> findAll(Optional<String> name) {
-    if (name.isPresent()){
-    return categoryRepository.findAllByName(name.get());
-    }
-    return categoryRepository.findAll();
+        if (name.isPresent()) {
+            return categoryRepository.findAllByName(name.get());
+        }
+        return categoryRepository.findAll();
     }
 
 }

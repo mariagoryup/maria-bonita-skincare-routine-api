@@ -1,4 +1,4 @@
-package com.mariabonita.skincareroutine.service;
+/**package com.mariabonita.skincareroutine.service;
 
 import com.mariabonita.skincareroutine.domain.products.StepCategory;
 import com.mariabonita.skincareroutine.repository.StepCategoryRepository;
@@ -21,3 +21,4 @@ public class StepCategoryService {
         return stepCategoryRepository.findById(idStepCategory).orElseThrow();
     }
 }
+*/

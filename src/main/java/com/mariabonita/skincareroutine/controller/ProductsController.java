@@ -78,10 +78,10 @@ public class ProductsController {
         return productsService.addFeature(idFeature, feature);
     }
 
-    @PostMapping("{idProducts}/step")
-    public Product addStep(@PathVariable("idProducts") Long idStep, @RequestBody Step step) {
-        return productsService.addStep(idStep, step);
-    }
+ //   @PostMapping("{idProducts}/step")
+   // public Product addStep(@PathVariable("idProducts") Long idStep, @RequestBody Step step) {
+     //   return productsService.addStep(idStep, step);
+    //}
 
 
 }

@@ -69,12 +69,12 @@ public class ProductsService {
         return productsRepository.save(product);
     }
 
-    @Transactional
-    public Product addStep(Long idStep, Step step) {
-        Product product = productsRepository.findById(idStep).orElseThrow();
-        product.addStep(step);
-        return productsRepository.save(product);
-    }
+ //   @Transactional
+   // public Product addStep(Long idStep, Step step) {
+     //   Product product = productsRepository.findById(idStep).orElseThrow();
+       // product.addStep(step);
+        //return productsRepository.save(product);
+    //}
 
 }
 

@@ -1,19 +1,20 @@
 package com.mariabonita.skincareroutine.dev;
 
-import com.mariabonita.skincareroutine.controller.ClientController;
+import com.mariabonita.skincareroutine.controller.MyUserController;
 import com.mariabonita.skincareroutine.controller.ProductsController;
 import com.mariabonita.skincareroutine.domain.products.Category;
 import com.mariabonita.skincareroutine.domain.products.Feature;
 import com.mariabonita.skincareroutine.domain.products.Product;
 import com.mariabonita.skincareroutine.domain.products.SkinType;
 import com.mariabonita.skincareroutine.repository.*;
-import com.mariabonita.skincareroutine.service.ClientService;
+import com.mariabonita.skincareroutine.service.MyUserService;
 import com.mariabonita.skincareroutine.service.ProductsService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -21,6 +22,7 @@ import java.util.List;
 @Component
 @RequiredArgsConstructor
 @Slf4j
+@Profile("dev")
 public class DataLoader implements ApplicationListener<ApplicationReadyEvent> {
 
     private final ProductsRepository productsRepository;
@@ -29,9 +31,9 @@ public class DataLoader implements ApplicationListener<ApplicationReadyEvent> {
     private final FeatureRepository featureRepository;
     private final ProductsService productsService;
     private final ProductsController productsController;
-    private final ClientRepository clientRepository;
-    private final ClientController clientController;
-    private final ClientService clientService;
+    private final MyUserRepository myUserRepository;
+    private final MyUserController myUserController;
+    private final MyUserService myUserService;
 
     @Override
     @Transactional

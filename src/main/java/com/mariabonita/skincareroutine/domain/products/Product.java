@@ -2,27 +2,38 @@ package com.mariabonita.skincareroutine.domain.products;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Data
+@NoArgsConstructor
+@Table(name = "products")
 public class Product {
+
     float price;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idProduct;
+
     private String name;
+
     private String company;
+
     @ManyToMany(cascade = CascadeType.ALL) //, orphanRemoval = true
     private List<Category> categories = new ArrayList<>();
+
     @ManyToMany(cascade = CascadeType.ALL)//, orphanRemoval = true
     private List<SkinType> skinTypes = new ArrayList<>();
+
     @ManyToMany(cascade = CascadeType.ALL) //, orphanRemoval = true
     private List<Feature> features = new ArrayList<>();
-    @ManyToMany(cascade = CascadeType.ALL) //, orphanRemoval = true
-    private List<Step> steps = new ArrayList<>();
+
+    //@ManyToMany(cascade = CascadeType.ALL) //, orphanRemoval = true
+    //private List<Step> steps = new ArrayList<>();
 
     public void addCategory(Category category) {
         categories.add(category);
@@ -39,11 +50,25 @@ public class Product {
         feature.getProducts().add(this);
     }
 
-    public void addStep(Step step) {
-        steps.add(step);
-        step.getProducts().add(this);
+    //public void addStep(Step step) {
+      //  steps.add(step);
+        //step.getProducts().add(this);
+    //}
+    public Product (float price, String name, String company) {
+        this.price = price;
+        this.name = name;
+        this.company = company;
+
     }
 
-
+    @Override
+    public String toString() {
+        return "Product{" +
+                "price=" + price +
+                ", idProduct=" + idProduct +
+                ", name='" + name + '\'' +
+                ", company='" + company + '\'' +
+                '}';
+    }
 }
 

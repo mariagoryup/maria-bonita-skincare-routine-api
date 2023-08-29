@@ -1,4 +1,4 @@
-package com.mariabonita.skincareroutine.controller;
+/**package com.mariabonita.skincareroutine.controller;
 
 import com.mariabonita.skincareroutine.domain.products.Step;
 import com.mariabonita.skincareroutine.service.StepService;
@@ -28,3 +28,4 @@ public class StepController {
     }
 
 }
+*/

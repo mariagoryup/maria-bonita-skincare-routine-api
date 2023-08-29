@@ -1,6 +1,6 @@
-package com.mariabonita.skincareroutine.domain.client;
+package com.mariabonita.skincareroutine.domain.myuser;
 
-import com.mariabonita.skincareroutine.domain.products.Routine;
+//import com.mariabonita.skincareroutine.domain.products.Routine;
 import com.mariabonita.skincareroutine.enums.*;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -39,12 +39,12 @@ public class MyUser {
     @Enumerated(EnumType.STRING)
     private SensitiveSkin sensitiveSkin;
 
-    @ManyToMany(cascade = CascadeType.ALL) //, orphanRemoval = true
-    private List<Routine> routines = new ArrayList<>();
+  //  @ManyToMany(cascade = CascadeType.ALL) //, orphanRemoval = true
+    //private List<Routine> routines = new ArrayList<>();
 
-    public void addRoutine(Routine routine) {
-        routines.add(routine);
-        routine.setMyUser(this);
-    }
+    //public void addRoutine(Routine routine) {
+      //  routines.add(routine);
+        //routine.setMyUser(this);
+    //}
 
 }

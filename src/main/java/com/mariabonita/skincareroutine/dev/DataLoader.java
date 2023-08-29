@@ -49,7 +49,7 @@ public class DataLoader implements ApplicationListener<ApplicationReadyEvent> {
 
 
         log.info("Closing the data Loader");
-        System.exit(42); // to comment if you want to run the application fully
+       // System.exit(42); // to comment if you want to run the application fully
     }
 
 

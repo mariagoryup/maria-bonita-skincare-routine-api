@@ -8,7 +8,7 @@
         <version>3.1.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.example</groupId>
+    <groupId>com.mariabonita.skincareroutine</groupId>
     <artifactId>maria-bonita-skincare-routine-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>maria-bonita-skincare-routine-api</name>

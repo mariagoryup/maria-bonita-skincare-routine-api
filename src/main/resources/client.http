@@ -1,11 +1,11 @@
 ### Get all clients
-GET localhost:8080/client
+GET localhost:8080/myUser
 
-### Get client by id
-GET localhost:8080/client/2
+### Get myUser by id
+GET localhost:8080/myUser/2
 
-### Create a new client
-POST localhost:8080/client
+### Create a new myUser
+POST localhost:8080/myUser
 Content-Type: application/json
 
 {
@@ -19,11 +19,11 @@ Content-Type: application/json
 
 }
 
-### delet a client
-DELETE localhost:8080/client/4
+### delet a myUser
+DELETE localhost:8080/myUser/4
 
-### Add a routine to a client
-POST localhost:8080/client/1/routine
+### Add a routine to a myUser
+POST localhost:8080/myUser/1/routine
 Content-Type: application/json
 
 {

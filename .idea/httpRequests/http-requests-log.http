@@ -1,0 +1,810 @@
+POST http://localhost:8080/products/1/feature
+Content-Type: application/json
+Content-Length: 52
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 3,
+  "name": "ANTI PIGMENTATION"
+}
+
+<> 2023-08-29T213742.500.json
+
+###
+
+POST http://localhost:8080/products/1/categories
+Content-Type: application/json
+Content-Length: 40
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 3,
+  "name": "SERUM"
+}
+
+<> 2023-08-29T213722.500.json
+
+###
+
+POST http://localhost:8080/products
+Content-Type: application/json
+Content-Length: 174
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Watermelon Glow Niacinamide Dew Drops",
+  "company": "Glow Recipe",
+  "price": 35.00,
+  "skinTypes": [
+  ],
+  "features": [],
+  "categories": [],
+  "steps": []
+}
+
+<> 2023-08-29T213652.201.json
+
+###
+
+GET http://localhost:8080/products/1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-08-29T213639.500.json
+
+###
+
+POST http://localhost:8080/products
+Content-Type: application/json
+Content-Length: 155
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Cleasing Oil and Mask",
+  "company": "Frei Öl",
+  "price": 18.60,
+  "skinTypes": [
+  ],
+  "features": [],
+  "categories": [],
+  "steps": []
+}
+
+<> 2023-08-29T213626.201.json
+
+###
+
+GET http://localhost:8080/product
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-08-29T213215.404.json
+
+###
+
+DELETE http://localhost:8080/products/1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-08-26T161422.500.json
+
+###
+
+DELETE http://localhost:8080/products/1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-08-26T161420.500.json
+
+###
+
+DELETE http://localhost:8080/products/1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-08-26T161408.500.json
+
+###
+
+DELETE http://localhost:8080/products/1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-08-26T161343.500.json
+
+###
+
+GET http://localhost:8080/products
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-08-26T161151.200.json
+
+###
+
+GET http://localhost:8080/products
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-08-26T161116.200.json
+
+###
+
+POST http://localhost:8080/products/12/feature
+Content-Type: application/json
+Content-Length: 52
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 3,
+  "name": "ANTI PIGMENTATION"
+}
+
+<> 2023-08-26T161104.200.json
+
+###
+
+POST http://localhost:8080/products/12/feature
+Content-Type: application/json
+Content-Length: 49
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 1,
+  "name": "SENSITIVE SKIN"
+}
+
+<> 2023-08-26T161030.200.json
+
+###
+
+POST http://localhost:8080/products/15/skinTypes
+Content-Type: application/json
+Content-Length: 38
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 5,
+  "name": "ALL"
+}
+
+<> 2023-08-26T161024.200.json
+
+###
+
+POST http://localhost:8080/products/15/categories
+Content-Type: application/json
+Content-Length: 40
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 3,
+  "name": "SERUM"
+}
+
+<> 2023-08-26T160947.200.json
+
+###
+
+POST http://localhost:8080/products/15/categories
+Content-Type: application/json
+Content-Length: 47
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 7,
+  "name": "TIME TO GLOW"
+}
+
+<> 2023-08-26T160441.200.json
+
+###
+
+POST http://localhost:8080/products
+Content-Type: application/json
+Content-Length: 158
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+"name": "Watermelon Glow Niacinamide Dew Drops",
+"company": "Glow Recipe",
+"price": 35.00,
+"skinTypes": [
+],
+"features": [],
+"categories": [],
+"steps": []
+}
+
+<> 2023-08-26T160410.201.json
+
+###
+
+POST http://localhost:8080/products/14/skinTypes
+Content-Type: application/json
+Content-Length: 41
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 3,
+  "name": "NORMAL"
+}
+
+<> 2023-08-26T160322.200.json
+
+###
+
+POST http://localhost:8080/products/14/skinTypes
+Content-Type: application/json
+Content-Length: 38
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 1,
+  "name": "DRY"
+}
+
+<> 2023-08-26T160302.200.json
+
+###
+
+POST http://localhost:8080/products/14/categories
+Content-Type: application/json
+Content-Length: 46
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 4,
+  "name": "MOISTURIZER"
+}
+
+<> 2023-08-26T160213.200.json
+
+###
+
+POST http://localhost:8080/products/14/categories
+Content-Type: application/json
+Content-Length: 47
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 7,
+  "name": "TIME TO GLOW"
+}
+
+<> 2023-08-26T160131.200.json
+
+###
+
+POST http://localhost:8080/products
+Content-Type: application/json
+Content-Length: 147
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+"name": "Vitamin Enriched Face Base",
+"company": "Bobbi Brown",
+"price": 70.00,
+"skinTypes": [
+],
+"features": [],
+"categories": [],
+"steps": []
+}
+
+<> 2023-08-26T160104.201.json
+
+###
+
+POST http://localhost:8080/products
+Content-Type: application/json
+Content-Length: 147
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+"name": "Vitamin Enriched Face Base",
+"company": "Bobbi Brown",
+"price": 44.50,
+"skinTypes": [
+],
+"features": [],
+"categories": [],
+"steps": []
+}
+
+<> 2023-08-26T160037.201.json
+
+###
+
+POST http://localhost:8080/products/12/feature
+Content-Type: application/json
+Content-Length: 49
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 1,
+  "name": "SENSITIVE SKIN"
+}
+
+<> 2023-08-26T155933.200.json
+
+###
+
+POST http://localhost:8080/products/12/skinTypes
+Content-Type: application/json
+Content-Length: 38
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 5,
+  "name": "ALL"
+}
+
+<> 2023-08-26T155918.200.json
+
+###
+
+POST http://localhost:8080/products/12/categories
+Content-Type: application/json
+Content-Length: 47
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 6,
+  "name": "TWICE A WEEK"
+}
+
+<> 2023-08-26T155902.200.json
+
+###
+
+POST http://localhost:8080/products
+Content-Type: application/json
+Content-Length: 139
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+"name": "Red Pepper Paste Mask",
+"company": "Erborian",
+"price": 44.50,
+"skinTypes": [
+],
+"features": [],
+"categories": [],
+"steps": []
+}
+
+<> 2023-08-26T155833.201.json
+
+###
+
+POST http://localhost:8080/products/11/feature
+Content-Type: application/json
+Content-Length: 49
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 1,
+  "name": "SENSITIVE SKIN"
+}
+
+<> 2023-08-26T155736.200.json
+
+###
+
+POST http://localhost:8080/products/11/feature
+Content-Type: application/json
+Content-Length: 52
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 1,
+  "name": "ANTI PIGMENTATION"
+}
+
+<> 2023-08-26T155639.200.json
+
+###
+
+POST http://localhost:8080/products/11/skinTypes
+Content-Type: application/json
+Content-Length: 38
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 5,
+  "name": "ALL"
+}
+
+<> 2023-08-26T155616.200.json
+
+###
+
+POST http://localhost:8080/products/11/categories
+Content-Type: application/json
+Content-Length: 44
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 5,
+  "name": "SUNSCREEN"
+}
+
+<> 2023-08-26T155603.200.json
+
+###
+
+POST http://localhost:8080/products
+Content-Type: application/json
+Content-Length: 131
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+"name": "White Gel 50",
+"company": "Haba Labo",
+"price": 21.48,
+"skinTypes": [
+],
+"features": [],
+"categories": [],
+"steps": []
+}
+
+<> 2023-08-26T155536.201.json
+
+###
+
+POST http://localhost:8080/products/10/feature
+Content-Type: application/json
+Content-Length: 43
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 2,
+  "name": "ANTI AGE"
+}
+
+<> 2023-08-26T155413.200.json
+
+###
+
+POST http://localhost:8080/products/10/feature
+Content-Type: application/json
+Content-Length: 49
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 1,
+  "name": "SENSITIVE SKIN"
+}
+
+<> 2023-08-26T155336.200.json
+
+###
+
+POST http://localhost:8080/products/10/skinTypes
+Content-Type: application/json
+Content-Length: 38
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 5,
+  "name": "ALL"
+}
+
+<> 2023-08-26T155317.200.json
+
+###
+
+POST http://localhost:8080/products/10/categories
+Content-Type: application/json
+Content-Length: 46
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 4,
+  "name": "MOISTURIZER"
+}
+
+<> 2023-08-26T155245.200.json
+
+###
+
+POST http://localhost:8080/products
+Content-Type: application/json
+Content-Length: 141
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+"name": "Pro Collagen Marine Cream",
+"company": "Elemis",
+"price": 89.25,
+"skinTypes": [
+],
+"features": [],
+"categories": [],
+"steps": []
+}
+
+<> 2023-08-26T155234.201.json
+
+###
+
+POST http://localhost:8080/products/9/skinTypes
+Content-Type: application/json
+Content-Length: 46
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 4,
+  "name": "COMBINATION"
+}
+
+<> 2023-08-26T154937.200.json
+
+###
+
+POST http://localhost:8080/products/9/skinTypes
+Content-Type: application/json
+Content-Length: 41
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 3,
+  "name": "NORMAL"
+}
+
+<> 2023-08-26T154912.200.json
+
+###
+
+POST http://localhost:8080/products/9/categories
+Content-Type: application/json
+Content-Length: 46
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 4,
+  "name": "MOISTURIZER"
+}
+
+<> 2023-08-26T154743.200.json
+
+###
+
+POST http://localhost:8080/products
+Content-Type: application/json
+Content-Length: 140
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+"name": "Hydro Boost Water Gel",
+"company": "Neutrogena",
+"price": 9.65,
+"skinTypes": [
+],
+"features": [],
+"categories": [],
+"steps": []
+}
+
+<> 2023-08-26T154707.201.json
+
+###
+
+POST http://localhost:8080/products/8/feature
+Content-Type: application/json
+Content-Length: 49
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 1,
+  "name": "SENSITIVE SKIN"
+}
+
+<> 2023-08-26T154508.200.json
+
+###
+
+POST http://localhost:8080/products/8/skinTypes
+Content-Type: application/json
+Content-Length: 38
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 5,
+  "name": "ALL"
+}
+
+<> 2023-08-26T154458.200.json
+
+###
+
+POST http://localhost:8080/products/8/categories
+Content-Type: application/json
+Content-Length: 40
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 3,
+  "name": "SERUM"
+}
+
+<> 2023-08-26T154442.200.json
+
+###
+
+POST http://localhost:8080/products
+Content-Type: application/json
+Content-Length: 132
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+"name": "Hydrabio Serum",
+"company": "Bioderma",
+"price": 26.90,
+"skinTypes": [
+],
+"features": [],
+"categories": [],
+"steps": []
+}
+
+<> 2023-08-26T154414.201.json
+
+###
+
+POST http://localhost:8080/products/7/feature
+Content-Type: application/json
+Content-Length: 49
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 1,
+  "name": "SENSITIVE SKIN"
+}
+
+<> 2023-08-26T153958.200.json
+
+###
+
+POST http://localhost:8080/products/7/skinTypes
+Content-Type: application/json
+Content-Length: 38
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 5,
+  "name": "ALL"
+}
+
+<> 2023-08-26T153945.200.json
+
+###
+
+POST http://localhost:8080/products/7/categories
+Content-Type: application/json
+Content-Length: 40
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 2,
+  "name": "TONIC"
+}
+
+<> 2023-08-26T153900.200.json
+
+###
+
+POST http://localhost:8080/products
+Content-Type: application/json
+Content-Length: 140
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+"name": "Aqua Bomb Hydrating Toner",
+"company": "Belif",
+"price": 25.00,
+"skinTypes": [
+],
+"features": [],
+"categories": [],
+"steps": []
+}
+
+<> 2023-08-26T153826.201.json
+
+###
+

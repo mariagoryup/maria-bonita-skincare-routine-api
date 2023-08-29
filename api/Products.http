@@ -1,54 +1,74 @@
 ### Get all Products
-GET localhost:8080/product
+GET localhost:8080/products
 
 ### Get Products by id
-GET localhost:8080/product/13
+GET localhost:8080/products/1
+
+### delet a product
+DELETE localhost:8080/products/1
+
 
 ### Create a new Product
-POST localhost:8080/product
+POST localhost:8080/products
+Content-Type: application/json
+
+{
+  "name": "Cleasing Oil and Mask",
+  "company": "Frei Öl",
+  "price": 18.60,
+  "skinTypes": [
+  ],
+  "features": [],
+  "categories": [],
+  "steps": []
+}
+
+### product complete
+
+POST localhost:8080/products
 Content-Type: application/json
 
 {
   "name": "Watermelon Glow Niacinamide Dew Drops",
   "company": "Glow Recipe",
-  "price": 35.00
+  "price": 35.00,
+  "skinTypes": [
+  ],
+  "features": [],
+  "categories": [],
+  "steps": []
 }
 
-### delet a product
-DELETE localhost:8080/product/16
-
 ### Add a Category to a Product
-POST localhost:8080/product/26/categories
+POST localhost:8080/products/1/categories
 Content-Type: application/json
 
 {
-  "name": "serum"
+  "idCategory": 3,
+  "name": "SERUM"
 }
 
 ### Add a skinType to a Product
-POST localhost:8080/product/26/skinTypes
+POST localhost:8080/products/15/skinTypes
 Content-Type: application/json
 
 {
-  "name": "all"
+  "idCategory": 5,
+  "name": "ALL"
 }
 
 ### Add a feature to a Product
-POST localhost:8080/product/26/feature
+POST localhost:8080/products/1/feature
 Content-Type: application/json
 
 {
-  "name": "anti pigmentation"
+  "idCategory": 3,
+  "name": "ANTI PIGMENTATION"
 }
 
 ### Add a step to a Product
 POST localhost:8080/product/15/step
 Content-Type: application/json
-
-{
-  "name": "tonic"
-}
-
 
 
 

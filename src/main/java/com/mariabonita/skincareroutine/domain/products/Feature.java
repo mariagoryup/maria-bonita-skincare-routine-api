@@ -17,7 +17,7 @@ public class Feature {
     long idFeature;
     String name;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "features")
    // @JsonIgnore
     private List<Product> products = new ArrayList<>();
 

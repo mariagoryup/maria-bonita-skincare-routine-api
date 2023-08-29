@@ -18,7 +18,7 @@ public class SkinType {
 
     String name;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "skinTypes")
    // @JsonIgnore
     private List<Product> products = new ArrayList<>();
 

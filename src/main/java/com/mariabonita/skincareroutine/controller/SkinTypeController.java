@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("skinType")
+@RequestMapping("skinTypes")
 public class SkinTypeController {
     private final SkinTypeService skinTypeService;
 

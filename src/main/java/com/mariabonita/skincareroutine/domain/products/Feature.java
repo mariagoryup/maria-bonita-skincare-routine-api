@@ -18,7 +18,7 @@ public class Feature {
     String name;
 
     @ManyToMany(mappedBy = "features")
-   // @JsonIgnore
+    @JsonIgnore
     private List<Product> products = new ArrayList<>();
 
     public Feature(String name) {

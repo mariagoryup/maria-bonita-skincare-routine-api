@@ -1,7 +1,7 @@
 package com.mariabonita.skincareroutine.service;
 
 import com.mariabonita.skincareroutine.domain.products.*;
-import com.mariabonita.skincareroutine.repository.ProductsRepository;
+import com.mariabonita.skincareroutine.repository.ProductRepository;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -11,62 +11,62 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class ProductsService {
-    private final ProductsRepository productsRepository;
+public class ProductService {
+    private final ProductRepository productRepository;
 
     public List<Product> findAll() {
-        return productsRepository.findAll();
+        return productRepository.findAll();
     }
 
-    public Product findById(Long idProducts) {
-        return productsRepository.findById(idProducts).orElseThrow();
+
+    public Product findById(Long idProduct) { return productRepository.findById(idProduct).orElseThrow();
     }
 
     @Transactional
     public Product save(Product product) {
-        return productsRepository.save(product);
+        return productRepository.save(product);
     }
 
     @Transactional
-    public Product update(Long idProducts, Product updatedProduct) {
-        Product existingProduct = productsRepository.findById(idProducts)
+    public Product update(Long idProduct, Product updatedProduct) {
+        Product existingProduct = productRepository.findById(idProduct)
                 .orElseThrow(() -> new EntityNotFoundException("Product not found"));
         existingProduct.setName(updatedProduct.getName());
         existingProduct.setCompany(updatedProduct.getCompany());
         existingProduct.setPrice(updatedProduct.getPrice());
 
-        return productsRepository.save(existingProduct);
+        return productRepository.save(existingProduct);
     }
 
     @Transactional
-    public void delete(Long idProducts) {
-        productsRepository.deleteById(idProducts);
+    public void delete(Long idProduct) {
+        productRepository.deleteById(idProduct);
     }
 
     @Transactional
     public Product addCategory(Long idCategory, Category category) {
-        Product product = productsRepository.findById(idCategory).orElseThrow();
+        Product product = productRepository.findById(idCategory).orElseThrow();
         product.addCategory(category);
-        return productsRepository.save(product);
+        return productRepository.save(product);
     }
 
-    public List<Product> findAllByCategory(Long id) {
-        return productsRepository.findAllByCategories_idCategory(id);
-    }
+   // public List<Product> findAllByCategory(Long id) {
+     //   return productsRepository.findAllByCategories_idCategory(id);
+    //}
 
 
     @Transactional
     public Product addSkinType(Long idSkinType, SkinType skinType) {
-        Product product = productsRepository.findById(idSkinType).orElseThrow();
+        Product product = productRepository.findById(idSkinType).orElseThrow();
         product.addSkinType(skinType);
-        return productsRepository.save(product);
+        return productRepository.save(product);
     }
 
     @Transactional
     public Product addFeature(Long idFeature, Feature feature) {
-        Product product = productsRepository.findById(idFeature).orElseThrow();
+        Product product = productRepository.findById(idFeature).orElseThrow();
         product.addFeature(feature);
-        return productsRepository.save(product);
+        return productRepository.save(product);
     }
 
  //   @Transactional

@@ -1,11 +1,12 @@
 ### Get all Products
 GET localhost:8080/products
 
+
 ### Get Products by id
-GET localhost:8080/products/1
+GET localhost:8080/products/12
 
 ### delet a product
-DELETE localhost:8080/products/1
+DELETE localhost:8080/products/41
 
 
 ### Create a new Product
@@ -40,7 +41,7 @@ Content-Type: application/json
 }
 
 ### Add a Category to a Product
-POST localhost:8080/products/1/categories
+POST localhost:8080/products/21/categories
 Content-Type: application/json
 
 {
@@ -49,7 +50,7 @@ Content-Type: application/json
 }
 
 ### Add a skinType to a Product
-POST localhost:8080/products/15/skinTypes
+POST localhost:8080/products/21/skinTypes
 Content-Type: application/json
 
 {
@@ -58,7 +59,7 @@ Content-Type: application/json
 }
 
 ### Add a feature to a Product
-POST localhost:8080/products/1/feature
+POST localhost:8080/products/21/feature
 Content-Type: application/json
 
 {
@@ -67,11 +68,8 @@ Content-Type: application/json
 }
 
 ### Add a step to a Product
-POST localhost:8080/product/15/step
-Content-Type: application/json
+##POST localhost:8080/product/15/step
+##Content-Type: application/json
 
 
 
-### find category from the product
-GET localhost:8080/product/categories/moisturizer
-Content-Type: application/json

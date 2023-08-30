@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("feature")
+@RequestMapping("features")
 public class FeatureController {
 
     private final FeatureService featureService;

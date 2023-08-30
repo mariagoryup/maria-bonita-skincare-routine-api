@@ -1,0 +1,43 @@
+### Get all clients
+GET localhost:8080/myUser
+
+### Get myUser by id
+GET localhost:8080/myUser/2
+
+### Create a new myUser
+POST localhost:8080/myUser
+Content-Type: application/json
+
+{
+  "name": "Maria Goryup",
+  "email": "maria@goryup.com",
+  "age": "AGE_18_TO_30",
+  "skinTypeClient": "NORMAL",
+  "howMuch": "$$",
+  "pigmentedSkin":"NO",
+  "sensitiveSkin": "NO"
+
+}
+
+### update MyUser
+PUT localhost:8080/myUser/4
+Content-Type: application/json
+
+{
+  "howMuch": "$"
+
+}
+
+
+
+### delet a myUser
+DELETE localhost:8080/myUser/3
+
+## Add a routine to a myUser
+##POST localhost:8080/myUser/1/routine
+##Content-Type: application/json
+
+##{
+  ##"name": "Maria`s Routine"
+##}
+

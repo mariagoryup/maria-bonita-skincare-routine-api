@@ -18,12 +18,14 @@ public class Category {
     String name;
 
     @ManyToMany(mappedBy = "categories")
-  //  @JsonIgnore
+    @JsonIgnore
+   // private  Product product;
     private List<Product> products = new ArrayList<>();
 
     public Category(String name) {
         this.name = name;
     }
+    //category.SetProducts(this);
 
     @Override
     public String toString() {

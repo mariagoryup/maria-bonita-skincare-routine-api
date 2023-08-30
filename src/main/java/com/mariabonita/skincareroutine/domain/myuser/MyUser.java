@@ -6,11 +6,16 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Table(name = "MyUser")
 @Entity
+@Getter
+@NoArgsConstructor
 @Data
 public class MyUser {
     @Id

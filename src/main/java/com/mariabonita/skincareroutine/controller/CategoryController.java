@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("category")
+@RequestMapping("categories")
 @RequiredArgsConstructor
 public class CategoryController {
 
@@ -25,10 +25,10 @@ public class CategoryController {
         return categoryService.findById(idCategory);
     }
 
-    @GetMapping("name")
-    public List<Category> getAllCategory(@RequestParam Optional<String> name) {
-        return categoryService.findAll(name);
-    }
+  //  @GetMapping("name")
+    //public List<Category> getAllCategory(@RequestParam Optional<String> name) {
+      //  return categoryService.findAll(name);
+    //}
 
 
 }

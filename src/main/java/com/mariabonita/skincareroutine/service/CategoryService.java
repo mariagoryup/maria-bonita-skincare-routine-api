@@ -21,11 +21,11 @@ public class CategoryService {
         return categoryRepository.findById(idCategory).orElseThrow();
     }
 
-    public List<Category> findAll(Optional<String> name) {
-        if (name.isPresent()) {
-            return categoryRepository.findAllByName(name.get());
-        }
-        return categoryRepository.findAll();
-    }
+  //  public List<Category> findAll(Optional<String> name) {
+    //    if (name.isPresent()) {
+      //      return categoryRepository.findAllByName(name.get());
+        //}
+        //return categoryRepository.findAll();
+    //}
 
 }

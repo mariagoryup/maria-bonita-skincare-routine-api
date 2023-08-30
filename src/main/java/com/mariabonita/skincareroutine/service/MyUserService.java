@@ -30,8 +30,8 @@ public class MyUserService {
     }
 
     @Transactional
-    public MyUser update(Long idClient, MyUser updatedMyUser) {
-        MyUser existingMyUser = myUserRepository.findById(idClient)
+    public MyUser update(Long idMyUser, MyUser updatedMyUser) {
+        MyUser existingMyUser = myUserRepository.findById(idMyUser)
                 .orElseThrow(() -> new EntityNotFoundException("Client not found"));
         existingMyUser.setName(updatedMyUser.getName());
         existingMyUser.setEmail(updatedMyUser.getEmail());

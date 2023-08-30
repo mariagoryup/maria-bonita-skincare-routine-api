@@ -1,14 +1,14 @@
 package com.mariabonita.skincareroutine.dev;
 
 import com.mariabonita.skincareroutine.controller.MyUserController;
-import com.mariabonita.skincareroutine.controller.ProductsController;
+import com.mariabonita.skincareroutine.controller.ProductController;
 import com.mariabonita.skincareroutine.domain.products.Category;
 import com.mariabonita.skincareroutine.domain.products.Feature;
 import com.mariabonita.skincareroutine.domain.products.Product;
 import com.mariabonita.skincareroutine.domain.products.SkinType;
 import com.mariabonita.skincareroutine.repository.*;
 import com.mariabonita.skincareroutine.service.MyUserService;
-import com.mariabonita.skincareroutine.service.ProductsService;
+import com.mariabonita.skincareroutine.service.ProductService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -25,13 +25,15 @@ import java.util.List;
 @Profile("dev")
 public class DataLoader implements ApplicationListener<ApplicationReadyEvent> {
 
-    private final ProductsRepository productsRepository;
+    private final ProductRepository productRepository;
     private final SkinTypeRepository skinTypeRepository;
     private final CategoryRepository categoryRepository;
     private final FeatureRepository featureRepository;
-    private final ProductsService productsService;
-    private final ProductsController productsController;
     private final MyUserRepository myUserRepository;
+
+    private final ProductService productService;
+    private final ProductController productController;
+
     private final MyUserController myUserController;
     private final MyUserService myUserService;
 
@@ -54,8 +56,6 @@ public class DataLoader implements ApplicationListener<ApplicationReadyEvent> {
 
 
     private List<Product> saveProducts(List<SkinType> skinTypes, List<Feature> features, List<Category> categories) {
-        // var faker = new Faker();
-        //  var example = faker.animal().name();
 
         var product1 = new Product(9.99F, "THE PERFECT PRODUCT", "THE PERFECT COMPANY" );
         product1.addSkinType(skinTypes.get(0));
@@ -77,7 +77,7 @@ public class DataLoader implements ApplicationListener<ApplicationReadyEvent> {
 
         System.out.println("======================");
         log.info("Persisting all Products");
-        var allProducts = productsRepository.saveAll(List.of(product1, product2));
+        var allProducts = productRepository.saveAll(List.of(product1, product2));
         allProducts.forEach(System.out::println);
         System.out.println("======================");
         return allProducts;

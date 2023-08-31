@@ -1,3 +1,247 @@
+GET http://localhost:8080/myUser
+Authorization: Bearer f89b7218-ee0f-4bd2-b516-b6b154280385
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Cookie: JSESSIONID=605ACC1BDFDB374557F7CCA37780DCE3
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET http://localhost:8080/myUser
+Authorization: Bearer {f89b7218-ee0f-4bd2-b516-b6b154280385}
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Cookie: JSESSIONID=605ACC1BDFDB374557F7CCA37780DCE3
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET http://localhost:8080/myUser
+Authorization: Bearer {{f89b7218-ee0f-4bd2-b516-b6b154280385}}
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Cookie: JSESSIONID=605ACC1BDFDB374557F7CCA37780DCE3
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET http://localhost:8080/myUser
+Authorization: Bearer {{Token}}
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Cookie: JSESSIONID=B7F6BF104B88644B09C4FB5C302BFB11
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET http://localhost:8080/myUser
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Cookie: JSESSIONID=5C6F73F8C184350A2DDCB8F56E1A33F1
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET http://localhost:8080/myUser
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Cookie: JSESSIONID=5C6F73F8C184350A2DDCB8F56E1A33F1
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET http://localhost:8080/myUser
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET http://localhost:8080/products
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-08-30T145852.200.json
+
+###
+
+GET http://localhost:8080/products
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-08-30T135828.200.json
+
+###
+
+PUT http://localhost:8080/myUser/4
+Content-Type: application/json
+Content-Length: 184
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Maria Goryup",
+  "email": "maria@goryup.com",
+  "age": "AGE_18_TO_30",
+  "skinTypeClient": "NORMAL",
+  "howMuch": "$$$",
+  "pigmentedSkin":"NO",
+  "sensitiveSkin": "NO"
+
+}
+
+<> 2023-08-30T134954.200.json
+
+###
+
+PUT http://localhost:8080/products/42
+Content-Type: application/json
+Content-Length: 80
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Cleasing Oil and Mask",
+  "company": "Frei Öl",
+  "price": 18.60
+}
+
+<> 2023-08-30T134826.200.json
+
+###
+
+PUT http://localhost:8080/products/42
+Content-Type: application/json
+Content-Length: 21
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "price": 15.00
+
+}
+
+<> 2023-08-30T134653.200.json
+
+###
+
+POST http://localhost:8080/products/42/features
+Content-Type: application/json
+Content-Length: 49
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 0,
+  "name": "SENSITIVE SKIN"
+}
+
+<> 2023-08-30T134332.200.json
+
+###
+
+POST http://localhost:8080/products/42/feature
+Content-Type: application/json
+Content-Length: 49
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 0,
+  "name": "SENSITIVE SKIN"
+}
+
+<> 2023-08-30T134218.404.json
+
+###
+
+POST http://localhost:8080/products/42/feature
+Content-Type: application/json
+Content-Length: 49
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 3,
+  "name": "SENSITIVE SKIN"
+}
+
+<> 2023-08-30T134148.404.json
+
+###
+
+POST http://localhost:8080/products/42/skinTypes
+Content-Type: application/json
+Content-Length: 38
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 5,
+  "name": "DRY"
+}
+
+<> 2023-08-30T134047.200.json
+
+###
+
+POST http://localhost:8080/products/42/categories
+Content-Type: application/json
+Content-Length: 47
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 5,
+  "name": "TWICE A WEEK"
+}
+
+<> 2023-08-30T134012.200.json
+
+###
+
+POST http://localhost:8080/products/42/categories
+Content-Type: application/json
+Content-Length: 43
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 0,
+  "name": "CLEANSER"
+}
+
+<> 2023-08-30T133930.200.json
+
+###
+
+POST http://localhost:8080/products/21/categories
+Content-Type: application/json
+Content-Length: 40
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "idCategory": 2,
+  "name": "SERUM"
+}
+
+<> 2023-08-30T133803.200.json
+
+###
+
 POST http://localhost:8080/products/21/categories
 Content-Type: application/json
 Content-Length: 40
@@ -418,246 +662,6 @@ Accept-Encoding: br,deflate,gzip,x-gzip
 }
 
 <> 2023-08-30T114721.201.json
-
-###
-
-GET http://localhost:8080/myUser
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-08-30T114625.200.json
-
-###
-
-POST http://localhost:8080/products/21/feature
-Content-Type: application/json
-Content-Length: 52
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "idCategory": 3,
-  "name": "ANTI PIGMENTATION"
-}
-
-<> 2023-08-30T114341.404.json
-
-###
-
-DELETE http://localhost:8080/products/31
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-###
-
-DELETE http://localhost:8080/products/1
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-###
-
-GET http://localhost:8080/products/1
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-08-30T113905.500.json
-
-###
-
-GET http://localhost:8080/products/1
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-08-30T113802.500.json
-
-###
-
-GET http://localhost:8080/products/1
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-08-30T112859.500.json
-
-###
-
-POST http://localhost:8080/products
-Content-Type: application/json
-Content-Length: 155
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "name": "Cleasing Oil and Mask",
-  "company": "Frei Öl",
-  "price": 18.60,
-  "skinTypes": [
-  ],
-  "features": [],
-  "categories": [],
-  "steps": []
-}
-
-<> 2023-08-30T112653.201.json
-
-###
-
-POST http://localhost:8080/products
-Content-Type: application/json
-Content-Length: 155
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "name": "Cleasing Oil and Mask",
-  "company": "Frei Öl",
-  "price": 18.60,
-  "skinTypes": [
-  ],
-  "features": [],
-  "categories": [],
-  "steps": []
-}
-
-<> 2023-08-30T112639.201.json
-
-###
-
-POST http://localhost:8080/products/1/feature
-Content-Type: application/json
-Content-Length: 52
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "idCategory": 3,
-  "name": "ANTI PIGMENTATION"
-}
-
-<> 2023-08-29T213742.500.json
-
-###
-
-POST http://localhost:8080/products/1/categories
-Content-Type: application/json
-Content-Length: 40
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "idCategory": 3,
-  "name": "SERUM"
-}
-
-<> 2023-08-29T213722.500.json
-
-###
-
-POST http://localhost:8080/products
-Content-Type: application/json
-Content-Length: 174
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "name": "Watermelon Glow Niacinamide Dew Drops",
-  "company": "Glow Recipe",
-  "price": 35.00,
-  "skinTypes": [
-  ],
-  "features": [],
-  "categories": [],
-  "steps": []
-}
-
-<> 2023-08-29T213652.201.json
-
-###
-
-GET http://localhost:8080/products/1
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-08-29T213639.500.json
-
-###
-
-POST http://localhost:8080/products
-Content-Type: application/json
-Content-Length: 155
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "name": "Cleasing Oil and Mask",
-  "company": "Frei Öl",
-  "price": 18.60,
-  "skinTypes": [
-  ],
-  "features": [],
-  "categories": [],
-  "steps": []
-}
-
-<> 2023-08-29T213626.201.json
-
-###
-
-GET http://localhost:8080/product
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-08-29T213215.404.json
-
-###
-
-DELETE http://localhost:8080/products/1
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-08-26T161422.500.json
-
-###
-
-DELETE http://localhost:8080/products/1
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-08-26T161420.500.json
-
-###
-
-DELETE http://localhost:8080/products/1
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-08-26T161408.500.json
-
-###
-
-DELETE http://localhost:8080/products/1
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-08-26T161343.500.json
 
 ###
 

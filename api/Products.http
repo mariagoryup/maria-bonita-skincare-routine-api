@@ -24,47 +24,40 @@ Content-Type: application/json
   "steps": []
 }
 
-### product complete
-
-POST localhost:8080/products
+### update a Product
+PUT localhost:8080/products/42
 Content-Type: application/json
 
 {
-  "name": "Watermelon Glow Niacinamide Dew Drops",
-  "company": "Glow Recipe",
-  "price": 35.00,
-  "skinTypes": [
-  ],
-  "features": [],
-  "categories": [],
-  "steps": []
+  "name": "Cleasing Oil and Mask",
+  "company": "Frei Öl",
+  "price": 18.60
 }
-
 ### Add a Category to a Product
-POST localhost:8080/products/21/categories
-Content-Type: application/json
-
-{
-  "idCategory": 3,
-  "name": "SERUM"
-}
-
-### Add a skinType to a Product
-POST localhost:8080/products/21/skinTypes
+POST localhost:8080/products/42/categories
 Content-Type: application/json
 
 {
   "idCategory": 5,
-  "name": "ALL"
+  "name": "TWICE A WEEK"
 }
 
-### Add a feature to a Product
-POST localhost:8080/products/21/feature
+### Add a skinType to a Product
+POST localhost:8080/products/42/skinTypes
 Content-Type: application/json
 
 {
-  "idCategory": 3,
-  "name": "ANTI PIGMENTATION"
+  "idCategory": 5,
+  "name": "DRY"
+}
+
+### Add a feature to a Product
+POST localhost:8080/products/42/features
+Content-Type: application/json
+
+{
+  "idCategory": 0,
+  "name": "SENSITIVE SKIN"
 }
 
 ### Add a step to a Product

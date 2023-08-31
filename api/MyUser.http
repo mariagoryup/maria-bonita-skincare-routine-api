@@ -1,5 +1,6 @@
-### Get all clients
+### Get all mmyUser
 GET localhost:8080/myUser
+Authorization: Bearer f89b7218-ee0f-4bd2-b516-b6b154280385
 
 ### Get myUser by id
 GET localhost:8080/myUser/2
@@ -24,10 +25,15 @@ PUT localhost:8080/myUser/4
 Content-Type: application/json
 
 {
-  "howMuch": "$"
+  "name": "Maria Goryup",
+  "email": "maria@goryup.com",
+  "age": "AGE_18_TO_30",
+  "skinTypeClient": "NORMAL",
+  "howMuch": "$$$",
+  "pigmentedSkin":"NO",
+  "sensitiveSkin": "NO"
 
 }
-
 
 
 ### delet a myUser

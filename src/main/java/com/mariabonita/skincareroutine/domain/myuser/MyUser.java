@@ -1,6 +1,7 @@
 package com.mariabonita.skincareroutine.domain.myuser;
 
 //import com.mariabonita.skincareroutine.domain.products.Routine;
+import com.mariabonita.skincareroutine.domain.Role;
 import com.mariabonita.skincareroutine.enums.*;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -10,7 +11,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+
+import static jakarta.persistence.FetchType.EAGER;
 
 @Table(name = "MyUser")
 @Entity
@@ -24,6 +28,8 @@ public class MyUser {
 
     @NotBlank
     private String name;
+
+    @NotBlank String password;
 
     @NotBlank
     @Email
@@ -44,6 +50,9 @@ public class MyUser {
     @Enumerated(EnumType.STRING)
     private SensitiveSkin sensitiveSkin;
 
+    @ManyToMany(fetch = EAGER)
+    private Collection<Role> roles = new ArrayList<>();
+
   //  @ManyToMany(cascade = CascadeType.ALL) //, orphanRemoval = true
     //private List<Routine> routines = new ArrayList<>();
 
@@ -52,4 +61,36 @@ public class MyUser {
         //routine.setMyUser(this);
     //}
 
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

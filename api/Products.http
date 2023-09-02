@@ -6,7 +6,7 @@ GET localhost:8080/products
 GET localhost:8080/products/12
 
 ### delet a product
-DELETE localhost:8080/products/41
+DELETE localhost:8080/products/12
 
 
 ### Create a new Product

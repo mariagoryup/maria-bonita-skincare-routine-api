@@ -9,9 +9,9 @@ import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -23,13 +23,10 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class MyUserService {
-
+public class MyUserService implements UserDetailsService {
     private final MyUserRepository myUserRepository;
     private final RoleRepository roleRepository;
-
-    private MyUserServiceInterface myUserServiceInterface;
-    private PasswordEncoder passwordEncoder;
+    private final PasswordEncoder passwordEncoder;
     public List<MyUser> findAll() {
         log.info("Fetching all users");
         return myUserRepository.findAll();
@@ -72,7 +69,7 @@ public class MyUserService {
         myUserRepository.deleteById(idMyUser);
     }
 
-    public UserDetails loadUserByEmail(String email) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         MyUser user = myUserRepository.findByEmail(email);
         if (user == null) {
             log.error("User not found in the database");

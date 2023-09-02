@@ -38,13 +38,21 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
 
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-        log.info("Email is: {}", email);
-        log.info("Password is: {}", password);
-        // Creating an Authentication token with given username and password
-        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(email, password);
-         return authenticationManager.authenticate(authenticationToken);
+        System.out.println();
+        try {
+            Map<String, String> credentials = new ObjectMapper().readValue(request.getInputStream(), Map.class);
+            String email = credentials.get("username");
+            String password = credentials.get("password");
+            log.info("Email is: {}", email);
+            log.info("Password is: {}", password);
+            // Creating an Authentication token with given username and password
+            UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(email, password);
+            return authenticationManager.authenticate(authenticationToken);
+        } catch (IOException e) {
+            log.error("error: ", e);
+            throw new RuntimeException(e);
+        }
+
     }
 
 
@@ -57,7 +65,7 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
         // Adding user details and roles to the token
         String access_token = JWT.create()
                 .withSubject(user.getUsername())
-                .withExpiresAt(new Date(System.currentTimeMillis() + 10 * 60 * 1000))
+                .withExpiresAt(new Date(System.currentTimeMillis() + 60 * 60 * 1000))
                 .withIssuer(request.getRequestURL().toString())
                 .withClaim("roles", user.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList()))
                 .sign(algorithm);

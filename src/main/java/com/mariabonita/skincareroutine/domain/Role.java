@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 public class Role {
 
     @Id

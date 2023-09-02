@@ -40,12 +40,6 @@ public class DataLoader implements ApplicationListener<ApplicationReadyEvent> {
     private final SkinTypeRepository skinTypeRepository;
     private final CategoryRepository categoryRepository;
     private final FeatureRepository featureRepository;
-    private final MyUserRepository myUserRepository;
-
-    private final ProductService productService;
-    private final ProductController productController;
-
-    private final MyUserController myUserController;
     private final MyUserService myUserService;
 
     /**
@@ -54,19 +48,20 @@ public class DataLoader implements ApplicationListener<ApplicationReadyEvent> {
      */
 //  MyUser(Long id, String name, String password, String email, Age age, SkinTypeClient skinTypeClient, HowMuch howMuch, ...)
     @Override
+    @Transactional
     public void onApplicationEvent(ApplicationReadyEvent event) {
-        MyUserService.saveRole(new Role(null, "ROLE_USER"));
-        MyUserService.saveRole(new Role(null, "ROLE_ADMIN"));
+        myUserService.saveRole(new Role(null, "ROLE_USER"));
+        myUserService.saveRole(new Role(null, "ROLE_ADMIN"));
 
-        MyUserService.saveMyUser(new MyUser(null, "Maria Maria", "123456", "maria@maria.com", AGE_18_TO_30, NORMAL, $$, NO, SensitiveSkin.NO, new ArrayList<>()));
-        MyUserService.saveMyUser(new MyUser(null, "Josi Josi", "12565634", "josi@josi.com", AGE_OVER_50, DRY, $$$, PigmentedSkin.YES, SensitiveSkin.NO, new ArrayList<>()));
-        MyUserService.saveMyUser(new MyUser(null, "Vinnie Vinnie", "1235956", "vinnie@vinnie.com", AGE_30_TO_49, OILY, $, NO, YES, new ArrayList<>()));
+        myUserService.saveMyUser(new MyUser(null, "Maria Maria", "123456", "maria@maria.com", AGE_18_TO_30, NORMAL, $$, NO, SensitiveSkin.NO, new ArrayList<>()));
+        myUserService.saveMyUser(new MyUser(null, "Josi Josi", "12565634", "josi@josi.com", AGE_OVER_50, DRY, $$$, PigmentedSkin.YES, SensitiveSkin.NO, new ArrayList<>()));
+        myUserService.saveMyUser(new MyUser(null, "Vinnie Vinnie", "1235956", "vinnie@vinnie.com", AGE_30_TO_49, OILY, $, NO, YES, new ArrayList<>()));
 
 
-        MyUserService.addRoleToMyUser("vinnie@vinnie.com", "ROLE_USER");
-        MyUserService.addRoleToMyUser("maria@maria.com", "ROLE_ADMIN");
-        MyUserService.addRoleToMyUser("maria@maria.com", "ROLE_USER");
-        MyUserService.addRoleToMyUser("josi@josi.com", "ROLE_USER");
+        myUserService.addRoleToMyUser("vinnie@vinnie.com", "ROLE_USER");
+        myUserService.addRoleToMyUser("maria@maria.com", "ROLE_ADMIN");
+        myUserService.addRoleToMyUser("maria@maria.com", "ROLE_USER");
+        myUserService.addRoleToMyUser("josi@josi.com", "ROLE_USER");
         var skinTypes = saveSkinTypes();
         var features = saveFeatures();
         var categories = saveCategories();

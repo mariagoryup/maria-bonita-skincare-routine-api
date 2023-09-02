@@ -19,7 +19,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MyUserController {
 
-    @Autowired
+
     ProductRepository productRepository;
     private final MyUserService myUserService;
 

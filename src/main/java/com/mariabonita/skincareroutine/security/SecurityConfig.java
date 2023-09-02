@@ -50,7 +50,7 @@ public class SecurityConfig {
         // disable CSRF protection
     //    http.csrf().disable();
         // set the session creation policy to stateless
-      http.sessionManagement().sessionCreationPolicy(STATELESS);
+    //  http.sessionManagement().sessionCreationPolicy(STATELESS);
         // set up authorization for different request matchers and user roles
         // modify this to have different configurations
         http.authorizeHttpRequests((requests) -> requests

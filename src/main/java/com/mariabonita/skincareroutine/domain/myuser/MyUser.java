@@ -6,6 +6,7 @@ import com.mariabonita.skincareroutine.enums.*;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,6 +21,7 @@ import static jakarta.persistence.FetchType.EAGER;
 @Entity
 @Getter
 @NoArgsConstructor
+@AllArgsConstructor
 @Data
 public class MyUser {
     @Id

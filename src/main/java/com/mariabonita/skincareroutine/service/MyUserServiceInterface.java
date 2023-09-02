@@ -9,12 +9,10 @@ public interface MyUserServiceInterface {
 
     MyUser saveMyUser(MyUser myUser);
 
-     //@param role the Role entity to be saved.
-     //@return the saved Role entity.
 
     Role saveRole(Role role);
 
-    void addRoleToUser(String username, String roleName);
+    void addRoleToUser(String email, String roleName);
     MyUser getUser(String email);
 
 
@@ -22,4 +20,4 @@ public interface MyUserServiceInterface {
 
     MyUser getUserByEmail(String email);
 }
-}
+

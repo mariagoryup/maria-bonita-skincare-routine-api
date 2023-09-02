@@ -1,5 +1,6 @@
 package com.mariabonita.skincareroutine.service;
 
+import com.mariabonita.skincareroutine.domain.Role;
 import com.mariabonita.skincareroutine.domain.myuser.MyUser;
 //import com.mariabonita.skincareroutine.domain.products.Routine;
 import com.mariabonita.skincareroutine.repository.MyUserRepository;
@@ -15,7 +16,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import javax.management.relation.Role;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -46,8 +46,8 @@ public class MyUserService {
 
     @Transactional
     public MyUser saveMyUser(MyUser myUser) {
-        log.info("Saving new user {} to the database", MyUser.getName());
-        MyUser.setPassword(passwordEncoder.encode(MyUser.getPassword()));
+        log.info("Saving new user {} to the database", myUser.getName());
+        myUser.setPassword(passwordEncoder.encode(myUser.getPassword()));
         return myUserRepository.save(myUser);
     }
 
@@ -73,7 +73,7 @@ public class MyUserService {
     }
 
     public UserDetails loadUserByEmail(String email) throws UsernameNotFoundException {
-        MyUser user = MyUserRepository.findByEmail(email);
+        MyUser user = myUserRepository.findByEmail(email);
         if (user == null) {
             log.error("User not found in the database");
             throw new UsernameNotFoundException("User not found in the database");
@@ -86,9 +86,10 @@ public class MyUserService {
 
             return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), authorities);
         }
+    }
 
 
-        public com.mariabonita.skincareroutine.domain.Role saveRole(com.mariabonita.skincareroutine.domain.Role role) {
+        public Role saveRole(Role role) {
             log.info("Saving new role {} to the database", role.getName());
             return roleRepository.save(role);
         }
@@ -96,10 +97,10 @@ public class MyUserService {
         public void addRoleToMyUser(String email, String roleName) {
             log.info("Adding role {} to user {}", roleName, email);
 
-            MyUser MyUser = MyUserRepository.findByEmail(email);
+            MyUser myUser = myUserRepository.findByEmail(email);
             Role role = roleRepository.findByName(roleName);
-            user.getRoles().add(role);
-            MyUserRepository.save(user);
+            myUser.getRoles().add(role);
+            myUserRepository.save(myUser);
         }
 
 
@@ -114,4 +115,4 @@ public class MyUserService {
     //}
 
 
-}
+

@@ -35,8 +35,8 @@ public class MyUserController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public MyUser createMyUser(@RequestBody MyUser myUser) {
-        return myUserService.save(myUser);
+    public MyUser saveMyUser(@RequestBody MyUser myUser) {
+        return myUserService.saveMyUser(myUser);
     }
 
     @PutMapping("/{idMyUser}")

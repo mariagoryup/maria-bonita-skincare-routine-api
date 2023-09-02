@@ -2,10 +2,14 @@ package com.mariabonita.skincareroutine.dev;
 
 import com.mariabonita.skincareroutine.controller.MyUserController;
 import com.mariabonita.skincareroutine.controller.ProductController;
+import com.mariabonita.skincareroutine.domain.Role;
+import com.mariabonita.skincareroutine.domain.myuser.MyUser;
 import com.mariabonita.skincareroutine.domain.products.Category;
 import com.mariabonita.skincareroutine.domain.products.Feature;
 import com.mariabonita.skincareroutine.domain.products.Product;
 import com.mariabonita.skincareroutine.domain.products.SkinType;
+import com.mariabonita.skincareroutine.enums.PigmentedSkin;
+import com.mariabonita.skincareroutine.enums.SensitiveSkin;
 import com.mariabonita.skincareroutine.repository.*;
 import com.mariabonita.skincareroutine.service.MyUserService;
 import com.mariabonita.skincareroutine.service.ProductService;
@@ -17,7 +21,14 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import static com.mariabonita.skincareroutine.enums.Age.*;
+import static com.mariabonita.skincareroutine.enums.HowMuch.*;
+import static com.mariabonita.skincareroutine.enums.PigmentedSkin.NO;
+import static com.mariabonita.skincareroutine.enums.SensitiveSkin.YES;
+import static com.mariabonita.skincareroutine.enums.SkinTypeClient.*;
 
 @Component
 @RequiredArgsConstructor
@@ -37,10 +48,25 @@ public class DataLoader implements ApplicationListener<ApplicationReadyEvent> {
     private final MyUserController myUserController;
     private final MyUserService myUserService;
 
+    /**
+     *
+     * Âdd Users
+     */
+//  MyUser(Long id, String name, String password, String email, Age age, SkinTypeClient skinTypeClient, HowMuch howMuch, ...)
     @Override
-    @Transactional
     public void onApplicationEvent(ApplicationReadyEvent event) {
+        MyUserService.saveRole(new Role(null, "ROLE_USER"));
+        MyUserService.saveRole(new Role(null, "ROLE_ADMIN"));
 
+        MyUserService.saveMyUser(new MyUser(null, "Maria Maria", "123456", "maria@maria.com", AGE_18_TO_30, NORMAL, $$, NO, SensitiveSkin.NO, new ArrayList<>()));
+        MyUserService.saveMyUser(new MyUser(null, "Josi Josi", "12565634", "josi@josi.com", AGE_OVER_50, DRY, $$$, PigmentedSkin.YES, SensitiveSkin.NO, new ArrayList<>()));
+        MyUserService.saveMyUser(new MyUser(null, "Vinnie Vinnie", "1235956", "vinnie@vinnie.com", AGE_30_TO_49, OILY, $, NO, YES, new ArrayList<>()));
+
+
+        MyUserService.addRoleToMyUser("vinnie@vinnie.com", "ROLE_USER");
+        MyUserService.addRoleToMyUser("maria@maria.com", "ROLE_ADMIN");
+        MyUserService.addRoleToMyUser("maria@maria.com", "ROLE_USER");
+        MyUserService.addRoleToMyUser("josi@josi.com", "ROLE_USER");
         var skinTypes = saveSkinTypes();
         var features = saveFeatures();
         var categories = saveCategories();
@@ -51,8 +77,9 @@ public class DataLoader implements ApplicationListener<ApplicationReadyEvent> {
 
 
         log.info("Closing the data Loader");
-       // System.exit(42); // to comment if you want to run the application fully
+        // System.exit(42); // to comment if you want to run the application fully
     }
+
 
 
     private List<Product> saveProducts(List<SkinType> skinTypes, List<Feature> features, List<Category> categories) {

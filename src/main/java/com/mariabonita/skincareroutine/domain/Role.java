@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @Getter
-@NoArgsConstructor
 @AllArgsConstructor
 public class Role {
 

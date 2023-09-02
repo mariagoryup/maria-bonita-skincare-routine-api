@@ -8,6 +8,15 @@ Accept-Encoding: br,deflate,gzip,x-gzip
 ###
 
 GET http://localhost:8080/myUser
+Authorization: Bearer f89b7218-ee0f-4bd2-b516-b6b154280385
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Cookie: JSESSIONID=605ACC1BDFDB374557F7CCA37780DCE3
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET http://localhost:8080/myUser
 Authorization: Bearer {f89b7218-ee0f-4bd2-b516-b6b154280385}
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
@@ -640,28 +649,6 @@ User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
 <> 2023-08-30T114907.200.json
-
-###
-
-POST http://localhost:8080/myUser
-Content-Type: application/json
-Content-Length: 178
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "name": "Josi Ribeiro",
-  "email": "josi@josi.com",
-  "age": "AGE_OVER_50",
-  "skinTypeClient": "DRY",
-  "howMuch": "$$$",
-  "pigmentedSkin":"YES",
-  "sensitiveSkin": "NO"
-
-}
-
-<> 2023-08-30T114721.201.json
 
 ###
 

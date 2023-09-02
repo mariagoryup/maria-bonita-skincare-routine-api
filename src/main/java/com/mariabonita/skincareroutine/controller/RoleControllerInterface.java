@@ -1,8 +1,9 @@
 package com.mariabonita.skincareroutine.controller;
 
+import com.mariabonita.skincareroutine.domain.Role;
 import com.mariabonita.skincareroutine.dto.RoleToMyUserDTO;
 
-import javax.management.relation.Role;
+//import javax.management.relation.Role;
 
 public interface RoleControllerInterface {
 

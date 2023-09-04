@@ -47,27 +47,20 @@ public class SecurityConfig {
         CustomAuthenticationFilter customAuthenticationFilter = new CustomAuthenticationFilter(authManagerBuilder.getOrBuild());
         // set the URL that the filter should process
         customAuthenticationFilter.setFilterProcessesUrl("/api/login");
-        // disable CSRF protection
-    //    http.csrf().disable();
-        // set the session creation policy to stateless
-    //  http.sessionManagement().sessionCreationPolicy(STATELESS);
-        // set up authorization for different request matchers and user roles
-        // modify this to have different configurations
+        //    http.csrf().disable();
+        //  http.sessionManagement().sessionCreationPolicy(STATELESS);
         http.authorizeHttpRequests((requests) -> requests
                 .requestMatchers("/api/login").permitAll()
           //      .requestMatchers("/swagger-ui/**").permitAll() //TODO verify how to make it work with security
-                .requestMatchers(GET, "/api/v1/users/me").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
-                .requestMatchers(GET, "/api/v1/users").hasAnyAuthority("ROLE_ADMIN")
-                .requestMatchers(POST, "/api/v1/users").hasAnyAuthority("ROLE_ADMIN")
+                .requestMatchers(GET, "/api/v1/myuser/me").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
+                .requestMatchers(GET, "/api/v1/myuser").hasAnyAuthority("ROLE_ADMIN")
+                .requestMatchers(POST, "/api/v1/myuser").hasAnyAuthority("ROLE_ADMIN")
                 .requestMatchers(GET, "/api/v1/greet").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
                 .requestMatchers(GET, "/api/v1/greet/admin").hasAnyAuthority("ROLE_ADMIN")
                 .anyRequest().permitAll()); // todo
-        // add the custom authentication filter to the http security object
         http.addFilter(customAuthenticationFilter);
-        // Add the custom authorization filter before the standard authentication filter.
         http.addFilterBefore(new CustomAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
 
-        // Build the security filter chain to be returned.
         return http.build();
     }
 }

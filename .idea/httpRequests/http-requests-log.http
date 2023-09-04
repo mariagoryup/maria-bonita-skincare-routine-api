@@ -1,3 +1,20 @@
+POST http://localhost:8080/api/login
+Content-Type: application/json
+Content-Length: 59
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Cookie: JSESSIONID=32421C9AF30EC5C8E7A99DC83B0790B9
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "maria@maria.com",
+  "password": "123456"
+}
+
+<> 2023-09-04T083933.403.json
+
+###
+
 DELETE http://localhost:8080/products/12
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
@@ -661,22 +678,6 @@ Accept-Encoding: br,deflate,gzip,x-gzip
 }
 
 <> 2023-08-30T134826.200.json
-
-###
-
-PUT http://localhost:8080/products/42
-Content-Type: application/json
-Content-Length: 21
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "price": 15.00
-
-}
-
-<> 2023-08-30T134653.200.json
 
 ###
 

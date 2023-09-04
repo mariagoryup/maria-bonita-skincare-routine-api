@@ -42,11 +42,6 @@ public class DataLoader implements ApplicationListener<ApplicationReadyEvent> {
     private final FeatureRepository featureRepository;
     private final MyUserService myUserService;
 
-    /**
-     *
-     * Âdd Users
-     */
-//  MyUser(Long id, String name, String password, String email, Age age, SkinTypeClient skinTypeClient, HowMuch howMuch, ...)
     @Override
     @Transactional
     public void onApplicationEvent(ApplicationReadyEvent event) {
@@ -79,22 +74,25 @@ public class DataLoader implements ApplicationListener<ApplicationReadyEvent> {
 
     private List<Product> saveProducts(List<SkinType> skinTypes, List<Feature> features, List<Category> categories) {
 
-        var product1 = new Product(9.99F, "THE PERFECT PRODUCT", "THE PERFECT COMPANY" );
-        product1.addSkinType(skinTypes.get(0));
-        product1.addFeature(features.get(0));
+        var product1 = new Product(10.00F, "Tea Tree Skin Clearing Facial Wash", "The Body Shop" );
+        product1.addSkinType(skinTypes.get(1));
+        product1.addSkinType(skinTypes.get(2));
+        product1.addSkinType(skinTypes.get(3));
+       // product1.addFeature(features.get(0));
         product1.addCategory(categories.get(0));
 
-        var product2 = new Product(11.99F, "THE NEW PERFECT PRODUCT", "THE PERFECT COMPANY" );
-        product2.addSkinType(skinTypes.get(3));
-        product2.addFeature(features.get(1));
-        product2.addFeature(features.get(2));
-        product2.addCategory(categories.get(3));
+        var product2 = new Product(11.95F, "Grapefruite Micellar Cleasing Water", "Blancreme Paris" );
+        product2.addSkinType(skinTypes.get(0));
+        product2.addSkinType(skinTypes.get(2));
+        product2.addFeature(features.get(0));
+        product2.addCategory(categories.get(1));
 
-        var product3 = new Product(8.39F, "Cleanance Hydra Soothing Cleanse Cream", "Eau Thermale Avène" );
+        var product3 = new Product(48.00F, "Papaya Enzyme Peel", "Elemis" );
         product3.addSkinType(skinTypes.get(4));
         product3.addFeature(features.get(1));
-        //  product3.addFeature(features.get(2));
-        product3.addCategory(categories.get(1));
+        product3.addFeature(features.get(0));
+        product3.addFeature(features.get(2));
+        product3.addCategory(categories.get(5));
 
 
         System.out.println("======================");

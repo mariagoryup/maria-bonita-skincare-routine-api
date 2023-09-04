@@ -55,6 +55,13 @@ public class MyUser {
     @ManyToMany(fetch = EAGER)
     private Collection<Role> roles = new ArrayList<>();
 
+    public MyUser(String name, String email, String password, Collection<Role> roles) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.roles = roles;
+    }
+
   //  @ManyToMany(cascade = CascadeType.ALL) //, orphanRemoval = true
     //private List<Routine> routines = new ArrayList<>();
 

@@ -3,6 +3,7 @@ package com.mariabonita.skincareroutine.controller;
 import com.mariabonita.skincareroutine.domain.Role;
 import com.mariabonita.skincareroutine.dto.RoleToMyUserDTO;
 import com.mariabonita.skincareroutine.service.MyUserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -10,20 +11,21 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/v1/roles")
+@RequiredArgsConstructor //*
 public class RoleController implements RoleControllerInterface {
 
-    @Autowired
+//*    @Autowired
     private MyUserService myUserService;
 
 
-    @PostMapping("/api/roles")
+    @PostMapping //*("/api/roles")
     @ResponseStatus(HttpStatus.CREATED)
     public void saveRole(@RequestBody Role role) {
         myUserService.saveRole(role);
     }
 
-        @PostMapping("/roles/addtomyuser")
+        @PostMapping("addtomyuser")
         @ResponseStatus(HttpStatus.NO_CONTENT)
         public void addRoleToMyUser (@RequestBody RoleToMyUserDTO roleToMyUserDTO){
             myUserService.addRoleToMyUser(roleToMyUserDTO.getEmail(), roleToMyUserDTO.getRoleName());

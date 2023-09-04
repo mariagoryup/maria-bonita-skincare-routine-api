@@ -10,12 +10,13 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("myUser")
+@RequestMapping("/api/v1/myuser")
 @RequiredArgsConstructor
 public class MyUserController {
 
@@ -37,6 +38,11 @@ public class MyUserController {
     @ResponseStatus(HttpStatus.CREATED)
     public MyUser saveMyUser(@RequestBody MyUser myUser) {
         return myUserService.saveMyUser(myUser);
+    }
+
+    @GetMapping("me")
+    public MyUser getMine(@PathVariable String email){
+        return myUserService.findByEmail(SecurityContextHolder.getContext().getAuthentication().getName());
     }
 
     @PutMapping("/{idMyUser}")
@@ -61,6 +67,8 @@ public class MyUserController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    //Routine still in progress
 
    // @PostMapping("{idMyUser}/routine")
     //public MyUser addRoutine(@PathVariable("idMyUser") Long idRoutine, @RequestBody Routine routine) {

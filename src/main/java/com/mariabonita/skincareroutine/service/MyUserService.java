@@ -10,6 +10,7 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -34,6 +35,10 @@ public class MyUserService implements UserDetailsService {
 
     public MyUser findById(Long idClient) {
         return myUserRepository.findById(idClient).orElseThrow();
+    }
+
+    public MyUser findByEmail(String email){
+        return myUserRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication().getName());
     }
 
     public MyUser getUser(String email) {
@@ -83,6 +88,8 @@ public class MyUserService implements UserDetailsService {
 
             return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), authorities);
         }
+
+
     }
 
 
@@ -101,7 +108,7 @@ public class MyUserService implements UserDetailsService {
         }
 
 
-    }
+}
 
 
  //   @Transactional
@@ -109,7 +116,7 @@ public class MyUserService implements UserDetailsService {
      //   MyUser myUser = myUserRepository.findById(idRoutine).orElseThrow();
        // myUser.addRoutine(routine);
         //return myUserRepository.save(myUser);
-    //}
+    //} //routine still in progress
 
 
 
